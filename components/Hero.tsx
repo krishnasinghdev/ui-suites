@@ -1,15 +1,10 @@
 import React, { useRef, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/bundle';
-
-// import required modules
-import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper';
+import { Autoplay, Pagination, EffectFade } from 'swiper';
 
 export default function App() {
   return (
@@ -17,28 +12,39 @@ export default function App() {
       <Swiper
         centeredSlides={true}
         autoplay={{
-          delay: 1500,
+          delay: 2500,
           disableOnInteraction: false,
         }}
         loop={true}
         pagination={{
           clickable: true,
         }}
-        navigation={true}
-        modules={[Autoplay, EffectFade, Pagination, Navigation]}
+        modules={[Autoplay, EffectFade, Pagination]}
         className='mySwiper'
       >
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-1.jpg' />
+          <div className='bg-bg-1 brightness-90 w-full h-full flex justify-center flex-col items-center bg-cover text-white'>
+            <h1 className='text-6xl sm:text-7xl mb-4 font-primary font-extrabold leading-1.5 '>
+              Welcome to Suites
+            </h1>
+            <p className='text-xl '>HOTEL & RESORT</p>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-2.jpg' />
+          <div className='bg-bg-2 brightness-90 w-full h-full flex justify-center flex-col items-center bg-cover text-white'>
+            <h1 className='text-6xl sm:text-7xl mb-4 font-primary font-extrabold leading-1.5 '>
+              Unique Experience
+            </h1>
+            <p className='text-xl '>ENJOY WITH US</p>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-3.jpg' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-4.jpg' />
+          <div className='bg-bg-3 brightness-90 w-full h-full flex justify-center flex-col items-center bg-cover text-white'>
+            <h1 className='text-6xl sm:text-7xl mb-4 font-primary font-extrabold leading-1.5 '>
+              Relaxing Rooms
+            </h1>
+            <p className='text-xl '>YOUR ROOM YOUR STAY</p>
+          </div>
         </SwiperSlide>
       </Swiper>
     </>

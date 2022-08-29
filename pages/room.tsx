@@ -1,18 +1,12 @@
-import type { NextPage } from 'next';
-import About from '../components/About';
-import Event from '../components/Event';
-import Feature from '../components/Feature';
-import Gallery from '../components/Gallery';
-import Hero from '../components/Hero';
+import React from 'react';
+import Header from '../components/Header';
 import Promo from '../components/Promo';
-import Review from '../components/Review';
 import RoomCard from '../components/RoomCard';
 import { roomData } from '../data';
-
-const Home: NextPage = () => {
+export default function room() {
   return (
     <>
-      <Hero />
+      <Header t1={'Hotel Rooms'} t2={'LUXURIOUS ROOMS '} />
       <h1 className='text-center font-primary text-5xl mt-20 mb-10'>
         Our Rooms
       </h1>
@@ -26,14 +20,7 @@ const Home: NextPage = () => {
           />
         ))}
       </section>
-      <About />
-      <Feature />
       <Promo />
-      <Gallery />
-      <Event />
-      <Review />
     </>
   );
-};
-
-export default Home;
+}

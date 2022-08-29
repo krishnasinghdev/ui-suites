@@ -1,5 +1,51 @@
-import React from 'react';
+import Link from 'next/link';
+import { useState } from 'react';
+import { navLinks } from '../data/index';
+import { AiOutlineMenu } from 'react-icons/ai';
+import { ImCross } from 'react-icons/im';
 
 export default function Navbar() {
-  return <div>Navbar</div>;
+  const [showMenu, setShowMenu] = useState(false);
+  return (
+    <>
+      <nav className='container py-4 mt-4  fixed z-10 top-0 flex justify-between text-white items-center '>
+        <Link href='/'>
+          <h1 className='font-serif text-3xl'>Suites</h1>
+        </Link>
+        <div className=' hidden lg:flex gap-6 text-gray-200'>
+          {navLinks.map(({ path, title }, index) => (
+            <Link href={path} key={index}>
+              <a className=' hover:text-white'>{title}</a>
+            </Link>
+          ))}
+        </div>
+        {!showMenu && (
+          <AiOutlineMenu
+            className='text-3xl lg:hidden'
+            onClick={() => setShowMenu((prev) => !prev)}
+          />
+        )}
+      </nav>
+      {/* MOBILE MENU */}
+
+      {showMenu && (
+        <aside className='w-[60vw] h-screen fixed bg-white transition flex flex-col gap-5 p-4 duration-1000  z-10 right-0'>
+          <ImCross
+            onClick={() => setShowMenu(false)}
+            className='self-end mr-4 mt-4 text-2xl'
+          />
+          {navLinks.map(({ title, path }, index) => (
+            <Link href={path} key={index}>
+              <a
+                className={'text-black hover:text-gray-400 '}
+                onClick={() => setShowMenu(false)}
+              >
+                {title}
+              </a>
+            </Link>
+          ))}
+        </aside>
+      )}
+    </>
+  );
 }
