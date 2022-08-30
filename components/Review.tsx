@@ -2,8 +2,8 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/free-mode';
-import 'swiper/css/pagination';
-import { FreeMode, Pagination } from 'swiper';
+import 'swiper/css/navigation';
+import { FreeMode, Navigation, Autoplay } from 'swiper';
 import Image from 'next/image';
 import xperson_1 from '../public/xperson_1.webp';
 import xperson_2 from '../public/xperson_2.webp';
@@ -19,15 +19,12 @@ export default function Review() {
         <Swiper
           autoHeight={true}
           freeMode={true}
-          pagination={{
-            clickable: true,
-          }}
           autoplay={{
-            delay: 500,
+            delay: 2500,
             disableOnInteraction: false,
           }}
           loop={true}
-          modules={[FreeMode, Pagination]}
+          modules={[FreeMode, Autoplay, Navigation]}
           breakpoints={{
             640: {
               slidesPerView: 1,
@@ -45,7 +42,13 @@ export default function Review() {
           className='mySwiper'
         >
           <SwiperSlide className='flex gap-4 items-center'>
-            <Image src={xperson_1} height={200} width={200} alt='galllery' />
+            <Image
+              src={xperson_1}
+              className='rounded-full'
+              height={200}
+              width={200}
+              alt='galllery'
+            />
             <div className='text-left '>
               <h1 className='mt-2'>Lorem ipsum dolor sit amet. </h1>
 
@@ -57,7 +60,13 @@ export default function Review() {
             </div>
           </SwiperSlide>
           <SwiperSlide className='flex gap-4 items-center'>
-            <Image src={xperson_2} height={200} width={200} alt='galllery' />
+            <Image
+              src={xperson_2}
+              className='rounded-full'
+              height={200}
+              width={200}
+              alt='galllery'
+            />
             <div className='text-left '>
               <h1 className='mt-2'>Lorem ipsum dolor sit amet. </h1>
 
@@ -69,7 +78,13 @@ export default function Review() {
             </div>
           </SwiperSlide>
           <SwiperSlide className='flex gap-4 items-center'>
-            <Image src={xperson_3} height={200} width={200} alt='galllery' />
+            <Image
+              src={xperson_3}
+              className='rounded-full'
+              height={200}
+              width={200}
+              alt='galllery'
+            />
             <div className='text-left '>
               <h1 className='mt-2'>Lorem ipsum dolor sit amet. </h1>
 
@@ -81,7 +96,13 @@ export default function Review() {
             </div>
           </SwiperSlide>
           <SwiperSlide className='flex gap-4 items-center'>
-            <Image src={xperson_4} height={200} width={200} alt='galllery' />
+            <Image
+              src={xperson_4}
+              className='rounded-full'
+              height={200}
+              width={200}
+              alt='galllery'
+            />
             <div className='text-left '>
               <h1 className='mt-2'>Lorem ipsum dolor sit amet. </h1>
 

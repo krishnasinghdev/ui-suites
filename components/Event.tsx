@@ -2,8 +2,8 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/free-mode';
-import 'swiper/css/pagination';
-import { FreeMode, Pagination } from 'swiper';
+import 'swiper/css/navigation';
+import { FreeMode, Navigation, Autoplay } from 'swiper';
 import Image from 'next/image';
 import bg1 from '../public/bg1.webp';
 import bg2 from '../public/bg2.webp';
@@ -20,14 +20,12 @@ export default function Event() {
       <main className='container bg-white py-20'>
         <Swiper
           autoHeight={true}
-          freeMode={true}
-          pagination={{
-            clickable: true,
-          }}
           autoplay={{
-            delay: 1500,
+            delay: 2500,
             disableOnInteraction: false,
           }}
+          slidesPerView={1}
+          spaceBetween={10}
           breakpoints={{
             640: {
               slidesPerView: 1,
@@ -43,7 +41,7 @@ export default function Event() {
             },
           }}
           loop={true}
-          modules={[FreeMode, Pagination]}
+          modules={[FreeMode, Navigation, Autoplay]}
           className='mySwiper'
         >
           <SwiperSlide className='flex flex-col'>
