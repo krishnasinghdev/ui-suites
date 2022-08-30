@@ -18,8 +18,6 @@ export default function Review() {
       <main className='container  py-20'>
         <Swiper
           autoHeight={true}
-          slidesPerView={2}
-          spaceBetween={30}
           freeMode={true}
           pagination={{
             clickable: true,
@@ -30,6 +28,20 @@ export default function Review() {
           }}
           loop={true}
           modules={[FreeMode, Pagination]}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+          }}
           className='mySwiper'
         >
           <SwiperSlide className='flex gap-4 items-center'>

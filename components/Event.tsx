@@ -20,8 +20,6 @@ export default function Event() {
       <main className='container bg-white py-20'>
         <Swiper
           autoHeight={true}
-          slidesPerView={3}
-          spaceBetween={30}
           freeMode={true}
           pagination={{
             clickable: true,
@@ -29,6 +27,20 @@ export default function Event() {
           autoplay={{
             delay: 1500,
             disableOnInteraction: false,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
           }}
           loop={true}
           modules={[FreeMode, Pagination]}

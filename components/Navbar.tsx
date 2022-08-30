@@ -6,13 +6,16 @@ import { ImCross } from 'react-icons/im';
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
+
   return (
     <>
-      <nav className='container py-4 mt-4  fixed z-10 top-0 flex justify-between text-white items-center '>
+      <nav
+        className={` py-4 pt-4 fixed shadow-md w-screen container z-10 top-0 flex justify-between items-center bg-white `}
+      >
         <Link href='/'>
           <h1 className='font-serif text-3xl'>Suites</h1>
         </Link>
-        <div className=' hidden lg:flex gap-6 text-gray-200'>
+        <div className={`hidden lg:flex gap-6 text-black`}>
           {navLinks.map(({ path, title }, index) => (
             <Link href={path} key={index}>
               <a className=' hover:text-white'>{title}</a>
