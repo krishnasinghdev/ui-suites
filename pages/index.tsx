@@ -8,8 +8,15 @@ import Promo from '../components/Promo';
 import Review from '../components/Review';
 import RoomCard from '../components/RoomCard';
 import { roomData } from '../data';
-
-const Home: NextPage = () => {
+import { GetStaticProps } from 'next';
+import { StaticImageData } from 'next/image';
+const Home: NextPage = (
+  roomData: {
+    img: StaticImageData;
+    title: string;
+    price: string;
+  }[]
+) => {
   return (
     <>
       <Hero />
@@ -17,7 +24,7 @@ const Home: NextPage = () => {
         Our Rooms
       </h1>
       <section className='grid sm:grid-cols-2 lg:grid-cols-3 container gap-8'>
-        {roomData.map((data, index) => (
+        {roomData.roomData.map((data, index) => (
           <RoomCard
             key={index}
             img={data?.img}
@@ -37,3 +44,11 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      roomData,
+    },
+  };
+};

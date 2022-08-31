@@ -3,7 +3,16 @@ import Header from '../components/Header';
 import Promo from '../components/Promo';
 import RoomCard from '../components/RoomCard';
 import { roomData } from '../data';
-export default function room() {
+import { GetStaticProps } from 'next';
+import { StaticImageData } from 'next/image';
+
+export default function room(
+  roomData: {
+    img: StaticImageData;
+    title: string;
+    price: string;
+  }[]
+) {
   return (
     <>
       <Header t1={'Hotel Rooms'} t2={'LUXURIOUS ROOMS '} />
@@ -11,7 +20,7 @@ export default function room() {
         Our Rooms
       </h1>
       <section className='grid sm:grid-cols-2 lg:grid-cols-3 container gap-8'>
-        {roomData.map((data, index) => (
+        {roomData.roomData.map((data, index) => (
           <RoomCard
             key={index}
             img={data?.img}
@@ -24,3 +33,11 @@ export default function room() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      roomData,
+    },
+  };
+};

@@ -1,20 +1,31 @@
 import React from 'react';
-import Event from '../components/Event';
-import Image from 'next/image';
+import { GetStaticProps } from 'next';
+import Image, { StaticImageData } from 'next/image';
 import bg1 from '../public/bg1.webp';
 import bg2 from '../public/bg2.webp';
 import bg3 from '../public/bg3.webp';
 import room1 from '../public/room1.webp';
 import room2 from '../public/room2.webp';
 import Header from '../components/Header';
+
 import { VscDebugStackframeDot } from 'react-icons/vsc';
-export default function event() {
+
+const imgData = [bg1, bg2, bg3, room1, room2];
+
+type imgDataType = [StaticImageData];
+
+export default function event(imgData: imgDataType) {
   return (
     <>
       <Header t1={'READ OUR'} t2={'Blogs & Events '} />
       <section className='grid sm:grid-cols-2 lg:grid-cols-3 container gap-8 mt-16'>
         <div className='flex flex-col'>
-          <Image src={bg1} height={250} width={400} alt='galllery' />
+          <Image
+            src={imgData.imgData[0]}
+            height={250}
+            width={400}
+            alt='galllery'
+          />
           <div className='text-left mt-6'>
             <h1 className='mt-2'>Lorem ipsum dolor sit amet. </h1>
             <p className='text-gray-400 text-sm my-1 '>
@@ -29,7 +40,12 @@ export default function event() {
           </div>
         </div>
         <div className='flex flex-col'>
-          <Image src={bg2} height={250} width={400} alt='galllery' />
+          <Image
+            src={imgData.imgData[1]}
+            height={250}
+            width={400}
+            alt='galllery'
+          />
           <div className='text-left mt-6'>
             <h1 className='mt-2'>Lorem ipsum dolor sit amet. </h1>
             <p className='text-gray-400 text-sm my-1 '>
@@ -44,7 +60,12 @@ export default function event() {
           </div>
         </div>
         <div className='flex flex-col'>
-          <Image src={room1} height={250} width={400} alt='galllery' />
+          <Image
+            src={imgData.imgData[3]}
+            height={250}
+            width={400}
+            alt='galllery'
+          />
           <div className='text-left mt-6'>
             <h1 className='mt-2'>Lorem ipsum dolor sit amet. </h1>
             <p className='text-gray-400 text-sm my-1 '>
@@ -59,7 +80,12 @@ export default function event() {
           </div>
         </div>
         <div className='flex flex-col'>
-          <Image src={bg3} height={250} width={400} alt='galllery' />
+          <Image
+            src={imgData.imgData[2]}
+            height={250}
+            width={400}
+            alt='galllery'
+          />
           <div className='text-left mt-6'>
             <h1 className='mt-2'>Lorem ipsum dolor sit amet. </h1>
             <p className='text-gray-400 text-sm my-1 '>
@@ -74,7 +100,12 @@ export default function event() {
           </div>
         </div>
         <div className='flex flex-col'>
-          <Image src={room2} height={250} width={400} alt='galllery' />
+          <Image
+            src={imgData.imgData[4]}
+            height={250}
+            width={400}
+            alt='galllery'
+          />
           <div className='text-left mt-6'>
             <h1 className='mt-2'>Lorem ipsum dolor sit amet. </h1>
             <p className='text-gray-400 text-sm my-1 '>
@@ -89,7 +120,12 @@ export default function event() {
           </div>
         </div>
         <div className='flex flex-col'>
-          <Image src={bg2} height={250} width={400} alt='galllery' />
+          <Image
+            src={imgData.imgData[1]}
+            height={250}
+            width={400}
+            alt='galllery'
+          />
           <div className='text-left mt-6'>
             <h1 className='mt-2'>Lorem ipsum dolor sit amet. </h1>
             <p className='text-gray-400 text-sm my-1 '>
@@ -104,7 +140,12 @@ export default function event() {
           </div>
         </div>
         <div className='flex flex-col'>
-          <Image src={room1} height={250} width={400} alt='galllery' />
+          <Image
+            src={imgData.imgData[3]}
+            height={250}
+            width={400}
+            alt='galllery'
+          />
           <div className='text-left mt-6'>
             <h1 className='mt-2'>Lorem ipsum dolor sit amet. </h1>
             <p className='text-gray-400 text-sm my-1 '>
@@ -119,7 +160,12 @@ export default function event() {
           </div>
         </div>
         <div className='flex flex-col'>
-          <Image src={bg3} height={250} width={400} alt='galllery' />
+          <Image
+            src={imgData.imgData[2]}
+            height={250}
+            width={400}
+            alt='galllery'
+          />
           <div className='text-left mt-6'>
             <h1 className='mt-2'>Lorem ipsum dolor sit amet. </h1>
             <p className='text-gray-400 text-sm my-1 '>
@@ -134,7 +180,12 @@ export default function event() {
           </div>
         </div>
         <div className='flex flex-col'>
-          <Image src={room2} height={250} width={400} alt='galllery' />
+          <Image
+            src={imgData.imgData[4]}
+            height={250}
+            width={400}
+            alt='galllery'
+          />
           <div className='text-left mt-6'>
             <h1 className='mt-2'>Lorem ipsum dolor sit amet. </h1>
             <p className='text-gray-400 text-sm my-1 '>
@@ -152,3 +203,11 @@ export default function event() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      imgData,
+    },
+  };
+};
