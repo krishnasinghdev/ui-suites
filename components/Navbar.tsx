@@ -18,7 +18,7 @@ export default function Navbar() {
         <div className={`hidden lg:flex gap-6 text-black`}>
           {navLinks.map(({ path, title }, index) => (
             <Link href={path} key={index}>
-              <a className=' hover:text-white'>{title}</a>
+              <a className=' hover:text-gray-400'>{title}</a>
             </Link>
           ))}
         </div>

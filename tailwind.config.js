@@ -22,8 +22,8 @@ module.exports = {
       },
 
       backgroundImage: {
-        'bg-1': 'url(/public/hero_1.jpg.webp)',
-        'bg-2': 'url(/public/hero_2.jpg.webp)',
+        'bg-1': 'url("https://preview.colorlib.com/theme/suites/images/hero_2.jpg.webp")',
+        'bg-2': 'url("https://preview.colorlib.com/theme/suites/images/hero_3.jpg.webp")',
         'bg-3': 'url(/public/hero_3.jpg.webp)',
       }
 
