@@ -23,9 +23,9 @@ export default function App() {
     >
       <SwiperSlide>
         <div className='bg-bg-1 brightness-90 w-full h-full flex justify-center flex-col items-center bg-cover text-white'>
-          <h1 className='text-6xl sm:text-7xl mb-4 font-primary font-extrabold leading-1.5 '>
+          <p className='text-6xl sm:text-7xl mb-4 font-primary font-extrabold leading-1.5 '>
             Welcome to Suites
-          </h1>
+          </p>
           <p className='text-xl '>HOTEL & RESORT</p>
         </div>
       </SwiperSlide>

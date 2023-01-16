@@ -38,3 +38,16 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+/* .container{
+  padding:0 1rem ;
+} */
+
+/* padding: {
+          DEFAULT: '1rem',
+          sm: '2rem',
+          md: '4rem',
+          lg: '6rem',
+          xl: '8rem',
+          '2xl': '10rem',
+        } */
