@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Promo() {
   return (
-    <div className='container bg-bg-2 py-16 bg-fixed grid sm:grid-cols-2 gap-8 text-white bg-transparent'>
+    <div className='container bg-bg-1 py-16 bg-fixed grid sm:grid-cols-2 gap-8 text-white bg-transparent'>
       <div>
         <h1 className='text-3xl '>Summer Promo 50% Off</h1>
         <button className='border mt-4 border-yellow-400 hover:bg-yellow-400 py-2 px-4 '>
