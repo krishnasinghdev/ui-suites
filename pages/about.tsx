@@ -14,13 +14,13 @@ import { staffData } from '../data';
 //   price: string;
 // }[];
 
-export default function about({staffData}) {
+export default function about(props) {
   return (
     <>
       <Header t1={'About Us'} t2={'SUITES HOTEL & RESORT'} />
       <About />
       <section className='grid sm:grid-cols-2 lg:grid-cols-3 container gap-8'>
-        {staffData.map((data, index) => (
+        {props.staffData.map((data, index) => (
           <StaffCard
             key={index}
             img={data?.img}
