@@ -7,21 +7,20 @@ import bg3 from '../public/bg3.webp';
 import room1 from '../public/room1.webp';
 import room2 from '../public/room2.webp';
 import Header from '../components/Header';
-
 import { VscDebugStackframeDot } from 'react-icons/vsc';
 
 const imgData = [bg1, bg2, bg3, room1, room2];
 
-type imgDataType = [StaticImageData];
 
-export default function event(imgData: imgDataType) {
+
+export default function event() {
   return (
     <>
       <Header t1={'READ OUR'} t2={'Blogs & Events '} />
       <section className='grid sm:grid-cols-2 lg:grid-cols-3 container gap-8 mt-16'>
         <div className='flex flex-col'>
           <Image
-            src={imgData.imgData[0]}
+            src={imgData[0]}
             height={250}
             width={400}
             alt='galllery'
@@ -41,7 +40,7 @@ export default function event(imgData: imgDataType) {
         </div>
         <div className='flex flex-col'>
           <Image
-            src={imgData.imgData[1]}
+            src={imgData[1]}
             height={250}
             width={400}
             alt='galllery'
@@ -61,7 +60,7 @@ export default function event(imgData: imgDataType) {
         </div>
         <div className='flex flex-col'>
           <Image
-            src={imgData.imgData[3]}
+            src={imgData[3]}
             height={250}
             width={400}
             alt='galllery'
@@ -81,7 +80,7 @@ export default function event(imgData: imgDataType) {
         </div>
         <div className='flex flex-col'>
           <Image
-            src={imgData.imgData[2]}
+            src={imgData[2]}
             height={250}
             width={400}
             alt='galllery'
@@ -101,7 +100,7 @@ export default function event(imgData: imgDataType) {
         </div>
         <div className='flex flex-col'>
           <Image
-            src={imgData.imgData[4]}
+            src={imgData[4]}
             height={250}
             width={400}
             alt='galllery'
@@ -121,7 +120,7 @@ export default function event(imgData: imgDataType) {
         </div>
         <div className='flex flex-col'>
           <Image
-            src={imgData.imgData[1]}
+            src={imgData[1]}
             height={250}
             width={400}
             alt='galllery'
@@ -141,7 +140,7 @@ export default function event(imgData: imgDataType) {
         </div>
         <div className='flex flex-col'>
           <Image
-            src={imgData.imgData[3]}
+            src={imgData[3]}
             height={250}
             width={400}
             alt='galllery'
@@ -161,7 +160,7 @@ export default function event(imgData: imgDataType) {
         </div>
         <div className='flex flex-col'>
           <Image
-            src={imgData.imgData[2]}
+            src={imgData[2]}
             height={250}
             width={400}
             alt='galllery'
@@ -181,7 +180,7 @@ export default function event(imgData: imgDataType) {
         </div>
         <div className='flex flex-col'>
           <Image
-            src={imgData.imgData[4]}
+            src={imgData[4]}
             height={250}
             width={400}
             alt='galllery'

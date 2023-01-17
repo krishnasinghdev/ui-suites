@@ -8,11 +8,6 @@ import Promo from '../components/Promo';
 import StaffCard from '../components/StaffCard';
 import { staffData } from '../data';
 
-type staffDataType = {
-  img: StaticImageData;
-  title: string;
-  price: string;
-}[];
 
 export default function about() {
   return (

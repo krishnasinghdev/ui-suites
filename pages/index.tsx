@@ -10,13 +10,7 @@ import RoomCard from '../components/RoomCard';
 import { roomData } from '../data';
 import { GetStaticProps } from 'next';
 import { StaticImageData } from 'next/image';
-const Home: NextPage = (
-  roomData: {
-    img: StaticImageData;
-    title: string;
-    price: string;
-  }[]
-) => {
+const Home = () => {
   return (
     <>
       <Hero />
@@ -24,7 +18,7 @@ const Home: NextPage = (
         Our Rooms
       </h1>
       <section className='grid sm:grid-cols-2 lg:grid-cols-3 container gap-8'>
-        {roomData.roomData.map((data, index) => (
+        {roomData.map((data, index) => (
           <RoomCard
             key={index}
             img={data?.img}
